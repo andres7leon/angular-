@@ -1,0 +1,18 @@
+<h1 *ngIf="mostrar; else ocultar">  ! {{ title }} ! </h1>
+<ng-template #ocultar>
+	<h2 > HEllo world :)</h2>
+</ng-template>
+
+
+<button class="btn btn-warning" (click)="muestra()" >Mustra/Oculta</button>
+
+
+<h2>Temas</h2>
+
+<ul>
+	<li *ngFor="let tema of temas">{{tema}}</li>
+</ul>
+
+<p [ngClass]="claseCss" >Un texto cualquiera</p>
+<button class="btn btn-danger" (click)="cambiaColor('rojo')" >Mustra/Oculta</button>
+<button class="btn btn-info" (click)="cambiaColor('blue')" >Mustra/Oculta</button>
