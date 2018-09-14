@@ -1,3 +1,8 @@
-<p>
-  nosotros works!
-</p>
+<h1> Nosotros</h1>
+
+
+<h2>Equipo</h2>
+
+<ul>
+	<li *ngFor="let miembro of equipo, index as id">{{miembro.nombre}} - <a [routerLink]="['/equipo',id]" > Ver mas </a> </li>
+</ul>

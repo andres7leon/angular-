@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EquipoService } from './../service/equipo.service';
 
 @Component({
   selector: 'app-nosotros',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NosotrosComponent implements OnInit {
 
-  constructor() { }
+	equipo:any[];
+
+  constructor(private _equipoServicio:EquipoService) { //inyectar servicio private _equipoServicio:EquipoService
+
+  		
+  	this.equipo = [{nombre:"",especialidad:"",bio:""},];
+
+  }
 
   ngOnInit() {
+  	this.verEquipo();
   }
+
+  verEquipo(){
+
+  	this.equipo = this._equipoServicio.verEquipo();
+
+  }
+
+
+
 
 }

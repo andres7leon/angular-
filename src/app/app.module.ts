@@ -9,29 +9,39 @@ import { FooterComponent } from './footer/footer.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { EquipoComponent } from './equipo/equipo.component';
+
+
+//servicios
+
+import { EquipoService } from './service/equipo.service';
 
 const RUTAS:Routes = [
   {path:"", component: InicioComponent},
   {path:"nosotros", component: NosotrosComponent},
   {path:"contacto", component: ContactoComponent},
+  {path:"equipo/:id", component: EquipoComponent},
   {path:"**", redirectTo: "/", pathMatch: 'full'}
 ];
 
 @NgModule({
-  declarations: [
+  declarations: [//js
     AppComponent,
     HeaderComponent,
     FooterComponent,
     NosotrosComponent,
     ContactoComponent,
-    InicioComponent
+    InicioComponent,
+    EquipoComponent
   ],
-  imports: [
+  imports: [//modulos externos
     BrowserModule,
     NgbModule,
     RouterModule.forRoot(RUTAS)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [//servicios
+    EquipoService
+  ],
+  bootstrap: [AppComponent]//base en donde inicia la app
 })
 export class AppModule { }
